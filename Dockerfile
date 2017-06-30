@@ -33,10 +33,16 @@ RUN mkdir -p /docker-entrypoint.d \
 COPY supervisord.conf /etc/supervisord.conf
 COPY supervisor.daemon.conf /etc/supervisor.conf.d/supervisor.daemon.conf
 
+ENV UNISON=/.unison
+RUN mkdir /.unison
+
+ENV UNISONLOCALHOSTNAME=dockersync
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["supervisord"]
 ############# ############# #############
 ############# /SHARED     / #############
 ############# ############# #############
 
+VOLUME /.unison
 EXPOSE 5000
