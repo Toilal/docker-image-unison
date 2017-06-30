@@ -14,7 +14,7 @@ You can configure how unison runs by using the following ENV variables:
  
  - `VOLUME` specifies the directory created in the container to store the synced files, `/data` by default
  - `OWNER_UID` specifies **the ID of the user** on which the unison process run and the owner of the synced files.
- - `GROUP_UID` specifies **the ID of the group** on which the unison process run and the group of the synced files.
+ - `GROUP_ID` specifies **the ID of the group** on which the unison process run and the group of the synced files.
  - `MAX_INOTIFY_WATCHES` increases the limit of inotify watches if you need to sync folders with lots of files. 
 
 ## Credits
