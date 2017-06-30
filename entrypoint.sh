@@ -46,6 +46,8 @@ if [ "$1" == 'supervisord' ]; then
 
 	chown -R $OWNER_UID $VOLUME
 
+	chown -R $OWNER_UID $UNISON
+
 	# see https://wiki.alpinelinux.org/wiki/Setting_the_timezone
 	if [ -n ${TZ} ] && [ -f /usr/share/zoneinfo/${TZ} ]; then
 		ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime
