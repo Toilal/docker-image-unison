@@ -47,11 +47,7 @@ if [ "$1" == 'supervisord' ]; then
 			existing_user_with_uid=$(awk -F: "/:$OWNER_UID:/{print \$1}" /etc/passwd)
 			OWNER=`getent passwd "$OWNER_UID" | cut -d: -f1`
 			GROUP=`getent group "$GROUP_ID" | cut -d: -f1`
-			mkdir -p /home/$OWNER
 			usermod -u $OWNER_UID -g $GROUP_ID $OWNER
-			usermod --home /home/$OWNER $OWNER
-			chown -R $OWNER /home/$OWNER
-			chgrp -R $GROUP /home/$OWNER
 		 fi
 	fi
 	export OWNER_HOMEDIR=`getent passwd $OWNER_UID | cut -f6 -d:`
