@@ -36,6 +36,8 @@ COPY supervisor.daemon.conf /etc/supervisor.conf.d/supervisor.daemon.conf
 ENV UNISON=/.unison
 RUN mkdir /.unison
 
+ENV UNISONLOCALHOSTNAME=dockersync
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["supervisord"]
 ############# ############# #############
